@@ -202,6 +202,23 @@ https://docs.cert-manager.io/en/latest/reference/ingress-shim.html
 
 Before we begin issuing certificates for our Ingress hosts, we need to create an Issuer, which specifies the certificate authority from which signed x509 certificates can be obtained. In this guide, we'll use the Let's Encrypt certificate authority, which provides free TLS certificates and offers both a staging server for testing your certificate configuration, and a production server for rolling out verifiable TLS certificates.
 
+Dont forget to change the `email` for for ACME registration on both prod and staging:
+
+```yaml
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: ClusterIssuer
+metadata:
+ name: letsencrypt-staging
+spec:
+ acme:
+   server: https://acme-staging-v02.api.letsencrypt.org/directory
+   # Email address used for ACME registration
+   email: email@email.com
+   privateKeySecretRef:
+     name: letsencrypt-staging
+   http01: {}
+```
+
 Let's create a test Issuer  and production Issuer to make sure the certificate provisioning mechanism is functioning correctly. Apply a file named staging_issuer.yaml and prod_issuer.yaml in kubectl:
 ```bash
 kubectl create -f staging_issuer.yaml
