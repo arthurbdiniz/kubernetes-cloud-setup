@@ -2,15 +2,15 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: echo-ingress
-  annotations:  
-    kubernetes.io/ingress.class: nginx
-    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+  # annotations:  
+  #   kubernetes.io/ingress.class: nginx
+  #   certmanager.k8s.io/cluster-issuer: letsencrypt-prod
 spec:
-  tls:
-  - hosts:
-    - echo1.arthurbdiniz.com
-    - echo2.arthurbdiniz.com
-    secretName: letsencrypt-prod
+  # tls:
+  # - hosts:
+  #   - echo1.arthurbdiniz.com
+  #   - echo2.arthurbdiniz.com
+  #   secretName: letsencrypt-prod
   rules:
   - host: echo1.arthurbdiniz.com
     http:
