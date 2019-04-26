@@ -3,6 +3,16 @@
 ![header](images/header.png)
 
 
+## Index
+
+- [Client Tools]()
+- [Digital Ocean Cluster Startup]()
+- [Cluster Backend Setup](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-1--Setting-Up-Dummy-Backend-Services)
+- [Nginx Ingress Controller](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-2--Setting-Up-the-Kubernetes-Nginx-Ingress-Controller)
+- [Cert-Manager](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-4--Installing-and-Configuring-Cert-Manager)
+- [Dashboard UI](https://github.com/arthurbdiniz/k8s-digital-ocean/#Deploy-the-Dashboard-UI)
+
+
 ## Prerequisites
 Before you begin with this guide, you should have the following available to you:
 
