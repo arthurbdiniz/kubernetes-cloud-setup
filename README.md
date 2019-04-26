@@ -406,3 +406,5 @@ Input the token we got from the above output into the token field below.
 
 
 ![dashboard-login](images/dashboard-login.png)
+
+After we login, we can access the pods and deployments in the Kubernetes dashboard.
