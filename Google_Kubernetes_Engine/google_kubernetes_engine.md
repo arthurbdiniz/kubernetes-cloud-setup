@@ -42,14 +42,14 @@ gcloud components install kubectl
 ## How to set the default settings for gcloud
 Before you begin, use the gcloudto set two default settings: the [project](https://support.google.com/cloud/answer/6158840) and the [computing zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) .
 
-Setting these default settings makes it easy to run commands gcloud, since it gcloudrequires you to specify the project and the computing zone you want to work with. You can also specify these settings or override default settings by passing operational flags, such as `--project`, `--zoneand` `--cluster, to commands gcloud.
+Setting these default settings makes it easy to run commands gcloud, since it gcloudrequires you to specify the project and the computing zone you want to work with. You can also specify these settings or override default settings by passing operational flags, such as `--project`, `--zoneand` `--cluster`, to commands gcloud.
 
 When you build the Kubernetes Engine features after you configure the project and the default computing zone, features are created automatically in this project and in that zone.
 
 > Note: the gcloudmay return an error if these settings are not set or are not specified.
 
 ## How to set a default project
-The project ID is the unique identifier for it. When creating a project for the first time, you can use the automatically generated code or one of your own.
+The [project](https://support.google.com/cloud/answer/6158840) ID is the unique identifier for it. When creating a project for the first time, you can use the automatically generated code or one of your own.
 
 To define a default project, run the following Cloud Shell command:
 
@@ -57,25 +57,25 @@ To define a default project, run the following Cloud Shell command:
 gcloud config set project [PROJECT_ID]
 ```
 
-Replace [PROJECT_ID]with your project code.
+Replace `[PROJECT_ID]` with your project code.
 
 ## How to Define a Default Computing Zone
-The computing zone is an approximate regional site that stores the clusters and resources. For example, it us-west1-ais a zone in the region us-west.
+The [computing zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) is an approximate regional site that stores the clusters and resources. For example, it `us-west1-ais` a zone in the region `us-west`.
 
 To define a default computing zone, run the following command:
 ```bash
 gcloud config set compute/zone [COMPUTE_ZONE]
 ```
-where [COMPUTE_ZONE] is the desired geographical computing zone, such as us-west1-a.
+where `[COMPUTE_ZONE]` is the desired geographical computing zone, such as `us-west1-a`.
 
 ## How to Create a Kubernetes Engine Cluster
-A cluster consists of at least one cluster master machine and several worker machines called nodes . Nodes are instances of Compute Engine virtual machines (VMs) that execute the Kubernetes processes required to make them part of the cluster. You deploy applications to the clusters, and the applications run on the nodes.
+A [cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture) consists of at least one cluster master machine and several worker machines called nodes . Nodes are [instances of Compute Engine virtual machines (VMs)](https://cloud.google.com/compute/docs/instances/) that execute the Kubernetes processes required to make them part of the cluster. You deploy applications to the clusters, and the applications run on the nodes.
 
 To create a cluster, run the following command:
 ```bash
 gcloud container clusters create [CLUSTER_NAME]
 ```
-where it [CLUSTER_NAME]is the name that you choose for the cluster.
+where it `[CLUSTER_NAME]` is the name that you choose for the cluster.
 
 > Note: Creating a cluster can take several minutes.
 
