@@ -424,8 +424,7 @@ After we login, we can access the pods and deployments in the Kubernetes dashboa
 
 https://cloud.google.com/community/tutorials/nginx-ingress-gke
 
-https://itnext.io/
-automated-tls-with-cert-manager-and-letsencrypt-for-kubernetes-7daaa5e0cae4
+https://itnext.io/automated-tls-with-cert-manager-and-letsencrypt-for-kubernetes-7daaa5e0cae4
 
 
 ## Traefik

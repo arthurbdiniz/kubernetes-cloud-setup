@@ -1,0 +1,24 @@
+# define Traefik configuration
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: traefik-config
+data:
+  traefik.toml: |
+    # traefik.toml
+    defaultEntryPoints = ["http","https"]
+    [entryPoints]
+      [entryPoints.http]
+        address = ":80"
+        [entryPoints.http.redirect]
+        entryPoint = "https"
+      [entryPoints.https]
+        address = ":443"
+        [entryPoints.https.tls]
+    [acme]
+    email = "arthurbdiniz@gmail.com"
+    storage = "/etc/traefik/acme/acme.json"
+    acmeLogging = true
+    entryPoint = "https"
+    [acme.httpChallenge]
+      entryPoint = "http"   
