@@ -2,16 +2,16 @@
 
 ![header](images/header.png)
 
-### [Digital Ocean]()
-### [Google Kubernetes Engine]()
-### [Amazon Web Services (AWS)]()
+### [Digital Ocean](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/Digital_Ocean/digital-ocean.md)
+### [Google Kubernetes Engine](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/Google_Kubernetes_Engine/google_kubernetes_engine.md)
+### [Amazon Web Services (AWS)](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/Amazon_Web_Services/amazon-web-services.md)
 
 ## Index
 
 1. [Client Tools](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-1--Client-Tools)
 2. [Cluster Backend Setup](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-2--Setting-Up-Dummy-Backend-Services)
 3. [Ingress Controller](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-3--Ingress-Controller)
-4. [Dashboard UI](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-4--Deploy-the-Dashboard-UI-(Optional))
+4. [Dashboard UI](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-4--Deploy-the-Dashboard-UI)
 
 ## Step 1 — Client Tools
 
@@ -58,11 +58,11 @@ kubernetes   ClusterIP   10.245.0.1       <none>        443/TCP   4d21h
 ## Step 3 - Ingress Controller
 In this casa you can choose to use Nginx Ingress controller or Traefik Ingress Controller
 
-### Step 3 A — Setting Up the Kubernetes Nginx Ingress Controller(https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/nginx_ingress_controller.md)
+### [Setting Up the Kubernetes Nginx Ingress Controller](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/nginx_ingress_controller.md)
 
-### Step 3 B — Setting Up the Traefik Ingress Controller(https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/traefik.md)
+### [Setting Up the Traefik Ingress Controller](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/traefik.md)
 
 ---
 
-### [Step 4 - Deploy the Dashboard UI (Optional)](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/dashboard.md)
+### [Step 4 - Deploy the Dashboard UI](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/dashboard.md)
 
