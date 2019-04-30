@@ -4,6 +4,12 @@
 [Helm]() and Tiller installed (or alternatively, use Tillerless Helm v2)
 cluster-admin privileges bound to the Tiller pod
 
+## Teardown the last ingress
+Delete the Ingress using kubectl:
+```bash
+kubectl delete -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/nginx_ingress_controller/echo_ingress.yaml
+```
+
 #### Install the CustomResourceDefinition resources separately
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/jetstack/cert-manager/release-0.7/deploy/manifests/00-crds.yaml

@@ -130,7 +130,7 @@ Here, we've specified that we'd like to create an Ingress Resource called echo-i
 
 Create the Ingress using kubectl:
 ```bash
-kubectl apply -f echo_ingress.yaml
+kubectl apply -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/nginx_ingress_controller/echo_ingress.yaml
 ```
 You'll see the following output confirming the Ingress creation:
 ```
@@ -141,5 +141,7 @@ ingress.extensions/echo-ingress created
 To test the Ingress, navigate to your DNS management service and create A records for `echo1.example.com` and `echo2.example.com` pointing to the DigitalOcean Load Balancer's external IP. The Load Balancer's external IP is the external IP address for the ingress-nginx Service, which we fetched in the previous step. If you are using DigitalOcean to manage your domain's DNS records, consult How to Manage DNS Records to learn how to create A records.
 
 
-
 ### [TLS Certificates - Installing and Configuring Cert-Manager](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/cert_manager.md)
+
+### [Home](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/README.md)
+
