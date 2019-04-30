@@ -9,9 +9,9 @@
 ## Index
 
 1. [Client Tools](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-1--Client-Tools)
-2. [Cluster Backend Setup](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-2--Setting-Up-Dummy-Backend-Services)
-3. [Ingress Controller](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-3--Ingress-Controller)
-4. [Dashboard UI](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-4--Deploy-the-Dashboard-UI)
+2. [Cluster Backend Setup](https://github.com/arthurbdiniz/kubernetes-cloud-setup#step-2--setting-up-dummy-backend-services)
+3. [Ingress Controller](https://github.com/arthurbdiniz/kubernetes-cloud-setup#step-3---ingress-controller)
+4. [Dashboard UI](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-4---Deploy-the-Dashboard-UI)
 
 ## Step 1 — Client Tools
 
@@ -64,5 +64,7 @@ In this casa you can choose to use Nginx Ingress controller or Traefik Ingress C
 
 ---
 
-### [Step 4 - Deploy the Dashboard UI](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/dashboard.md)
+## Step 4 - Deploy the Dashboard UI
+Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
 
+[Tutorial Link](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/dashboard.md)
