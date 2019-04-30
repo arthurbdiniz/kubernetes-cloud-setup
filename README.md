@@ -1,7 +1,9 @@
-# How to Set Up an Nginx Ingress with Cert-Manager 0.7.1 on DigitalOcean Kubernetes
+# How to Set Up Kubernetes,Nginx Ingress and Cert-Manager Cloud
 
 ![header](images/header.png)
 
+
+# Digital Ocean
 
 ## Index
 
