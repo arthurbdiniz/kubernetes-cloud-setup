@@ -1,4 +1,4 @@
-## Google Kubernetes Engine
+# Google Kubernetes Engine
 
 ### Before You Begin
 Follow these steps to enable the Google Kubernetes Engine API:
@@ -18,7 +18,7 @@ Google Cloud Shell is a shell environment for managing features hosted on the Go
 
 If you prefer to use the local shell, install the command-line tools `gcloud` and `kubectl` in your environment.
 
-#### Cloud Sheell Local
+### Cloud Sheell Local
 To start the Cloud Shell, follow these steps:
 
 Navigate to the Google Cloud Platform.
@@ -29,7 +29,7 @@ In the upper-right corner of the console, click the Enable Google Cloud Shell bu
 
 A Cloud Shell session opens inside a frame at the bottom of the console. Use this shell to execute the commands gcloudand kubectl.
 
-#### Shell Local
+### Shell Local
 To install gcloude kubectl, follow these steps:
 
 Install the [Google Cloud SDK](https://cloud.google.com/sdk/docs/quickstarts) , which contains the command line tool gcloud.
