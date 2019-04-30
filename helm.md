@@ -8,13 +8,28 @@ Once you have satisfied the pre-requisite and have a service account with the co
 
 Note: The cluster-admin role is created by default in a Kubernetes cluster, so you don't have to define it explicitly.
 ```bash
-$ kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/rbac/rbac_config.yaml
+kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/rbac/rbac_config.yaml
 ```
+
+
 ````
 # Output
 serviceaccount "tiller" created
 clusterrolebinding "tiller" created
 ````
 ```bash
-$ helm init --service-account tiller
+helm init --service-account tiller
 ```
+
+
+Now watch the tiller pod been created and wait to b deployed on your cluster.
+```bash
+kubectl get po -n kube-system -w
+```
+
+You should see at the end:
+```bash
+# Output
+tiller-deploy-54fc6d9ccc-gp7sr                           1/1     Running   0          9m5s
+```
+Now you can proceed to choose you favorite ingress controller on [this section](https://github.com/arthurbdiniz/kubernetes-cloud-setup#step-3---ingress-controller) of the tutorial
