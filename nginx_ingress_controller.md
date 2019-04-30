@@ -64,5 +64,7 @@ ingress.extensions/echo-ingress created
 To test the Ingress, navigate to your DNS management service and create A records for `echo1.example.com` and `echo2.example.com` pointing to the DigitalOcean Load Balancer's external IP. The Load Balancer's external IP is the external IP address for the ingress-nginx Service, which we fetched in the previous step. If you are using DigitalOcean to manage your domain's DNS records, consult How to Manage DNS Records to learn how to create A records.
 
 
+helm install --name nginx-ingress stable/nginx-ingress
+
 
 ### [TLS Certificates - Installing and Configuring Cert-Manager](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/cert_manager.md)
