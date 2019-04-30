@@ -91,6 +91,12 @@ gcloud container clusters get-credentials [CLUSTER_NAME]
 To check if your gcloud cluter is ok check with the command.
 ```bash
 kubectl get nodes
+
+# Output
+NAME                                          STATUS   ROLES    AGE   VERSION
+gke-kube-cluster-default-pool-ea660e48-csd6   Ready    <none>   2m    v1.11.8-gke.6
+gke-kube-cluster-default-pool-ea660e48-cz4s   Ready    <none>   2m    v1.11.8-gke.6
+gke-kube-cluster-default-pool-ea660e48-r3v1   Ready    <none>   2m    v1.11.8-gke.6
 ```
 
 ## Next Steps

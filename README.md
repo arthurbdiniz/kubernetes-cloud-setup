@@ -22,7 +22,7 @@ Before we deploy the Ingress Controller, we'll first create and roll out two dum
 
 On your local machine, apply echo1.yaml using kubectl:
 ```bash
-$ kubectl create -f echo1.yaml
+$ kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo1.yaml
 ```
 ```bash
 # Output
@@ -34,7 +34,7 @@ This indicates that the echo1 Service is now available internally at 10.245.222.
 
 Now that the echo1 Service is up and running, repeat this process for the echo2 Service.
 ```bash
-$ kubectl create -f echo2.yaml
+$ kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo2.yaml
 ```
 ```bash
 # Output
