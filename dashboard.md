@@ -1,5 +1,7 @@
 # Deploy the Dashboard UI
 
+## Apply template of version v1.10.1
+
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
 ```
@@ -13,7 +15,7 @@ Now access Dashboard at:
 
 [http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/](http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/)
 
-Create An Authentication Token (RBAC)
+## Create An Authentication Token (RBAC)
 
 Create the service account first using the following YAML file.
 ```bash
