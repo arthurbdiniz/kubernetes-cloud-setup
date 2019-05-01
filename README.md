@@ -5,22 +5,22 @@
 
 ## Index
 
-## Step 1 — Setup Cloud Cluster
-1. [Setup Cloud Cluster](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-1--Setup-Cloud-Cluster)
-2. [Client Tools](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-2--Client-Tools)
+1. [Client Tools](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-1--Client-Tools)
+2. [Setup Cloud Cluster](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-2--Setup-Cloud-Cluster)
 3. [Cluster Backend Setup](https://github.com/arthurbdiniz/kubernetes-cloud-setup#step-3--setting-up-dummy-backend-services)
 4. [Ingress Controller](https://github.com/arthurbdiniz/kubernetes-cloud-setup#step-4---ingress-controller)
 5. [Dashboard UI](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-5---Deploy-the-Dashboard-UI)
 
-## Step 1 - Setup Cloud Cluster
+## Step 1 — Client Tools
+//TODO
+
+kubectl and helm
+
+## Step 2 - Setup Cloud Cluster
 ### [Digital Ocean](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/Digital_Ocean/digital-ocean.md)
 ### [Google Kubernetes Engine](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/Google_Kubernetes_Engine/google_kubernetes_engine.md)
 ### [Amazon Web Services (AWS)](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/Amazon_Web_Services/amazon-web-services.md)
 
-## Step 2 — Client Tools
-//TODO
-
-kubectl and helm
 
 ## Step 3 — Setting Up Dummy Backend Services
 Before we deploy the Ingress Controller, we'll first create and roll out two dummy echo Services to which we'll route external traffic using the Ingress. The echo Services will run the hashicorp/http-echo web server container, which returns a page containing a text string passed in when the web server is launched. To learn more about http-echo, consult its GitHub Repo, and to learn more about Kubernetes Services, consult Services from the official Kubernetes docs.
