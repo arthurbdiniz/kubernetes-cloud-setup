@@ -13,6 +13,9 @@
 
 ## Step 1 — Client Tools
 
+#### Install Kubectl
+The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For a complete list of kubectl operations, see Overview of kubectl.
+Just follow the download page [https://kubernetes.io/docs/tasks/tools/install-kubectl/](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
 #### Install Helm
 If you already have Helm client and Tiller installed on your cluster, you can skip to the next section.
