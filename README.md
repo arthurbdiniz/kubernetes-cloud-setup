@@ -12,9 +12,29 @@
 5. [Dashboard UI](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-5---Deploy-the-Dashboard-UI)
 
 ## Step 1 — Client Tools
-//TODO
 
-kubectl and helm
+
+#### Install Helm
+If you already have Helm client and Tiller installed on your cluster, you can skip to the next section.
+
+Helm is a tool that streamlines installing and managing Kubernetes applications and resources. Think of it like apt/yum/homebrew for Kubernetes. Use of helm charts is recommended since they are maintained and typically kept up-to-date by the Kubernetes community.
+
+Helm has two parts: a client (helm) and a server (tiller)
+Tiller runs inside of your Kubernetes cluster, and manages releases (installations) of your helm charts.
+Helm runs on your laptop, CI/CD, or in our case, the Cloud Shell.
+You can install the helm client in Cloud Shell using the following commands:
+```
+curl -o get_helm.sh https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get
+chmod +x get_helm.sh
+./get_helm.sh
+```
+The script above fetches the latest version of helm client and installs it locally in Cloud Shell.
+
+Downloading `https://kubernetes-helm.storage.googleapis.com/helm-v2.8.1-linux-amd64.tar.gz`
+Preparing to install into `/usr/local/bin`
+helm installed into `/usr/local/bin/helm`
+Run `'helm init'` to configure helm.
+
 
 ## Step 2 - Setup Cloud Cluster
 ### [Digital Ocean](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/Digital_Ocean/digital-ocean.md)
