@@ -7,6 +7,10 @@ data:
   traefik.toml: |
     # traefik.toml
     defaultEntryPoints = ["http","https"]
+    debug = false
+    logLevel = "INFO"
+    # Do not verify backend certificates (use https backends)
+    #InsecureSkipVerify = true
     [entryPoints]
       [entryPoints.http]
         address = ":80"
@@ -16,9 +20,18 @@ data:
         address = ":443"
         [entryPoints.https.tls]
     [acme]
-    email = "arthurbdiniz@gmail.com"
+    email = "example@email.com"
     storage = "/etc/traefik/acme/acme.json"
     acmeLogging = true
     entryPoint = "https"
+    onDemand = true
+    onHostRule = true
     [acme.httpChallenge]
-      entryPoint = "http"   
+      entryPoint = "http"
+    [[acme.domains]]
+    main = "example.com"
+    [api]
+      dashboard = true
+    [web]
+      address = ":8080"
+    [kubernetes]

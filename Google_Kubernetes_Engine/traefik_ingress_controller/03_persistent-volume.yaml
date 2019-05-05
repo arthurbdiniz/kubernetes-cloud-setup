@@ -1,0 +1,16 @@
+# gcloud compute disks create --size=30GB --zone=us-central1-f pd-acme
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-acme
+  labels:
+    failure-domain.beta.kubernetes.io/zone: us-central1-f
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 30Gi
+  accessModes:
+  - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: pd-acme
+    fsType: ext4
