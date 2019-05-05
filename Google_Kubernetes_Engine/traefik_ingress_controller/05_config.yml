@@ -20,18 +20,17 @@ data:
         address = ":443"
         [entryPoints.https.tls]
     [acme]
-    email = "example@email.com"
-    storage = "/etc/traefik/acme/acme.json"
-    acmeLogging = true
-    entryPoint = "https"
-    onDemand = true
-    onHostRule = true
-    [acme.httpChallenge]
-      entryPoint = "http"
-    [[acme.domains]]
-    main = "example.com"
-    [api]
-      dashboard = true
+      email = "arthurbdiniz@gmail.com"
+      storage = "/etc/traefik/acme/acme.json"
+      acmeLogging = true
+      entryPoint = "https"
+      onDemand = true
+      onHostRule = true
+      #caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+      [acme.httpChallenge]
+        entryPoint = "http"
+      [[acme.domains]]
+      main = "arthurbdiniz.com"
     [web]
       address = ":8080"
     [kubernetes]

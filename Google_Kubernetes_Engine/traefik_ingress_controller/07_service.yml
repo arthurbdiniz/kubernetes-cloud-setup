@@ -7,10 +7,13 @@ spec:
   selector:
     app: traefik-ingress-controller
   ports:
-    - port: 80
-      name: http
-    - port: 443
+    - protocol: TCP
+      port: 80
+      name: web
+    - protocol: TCP
+      port: 443
       name: https
-    - port: 8080
+    - protocol: TCP
+      port: 8080
       name: admin
   type: LoadBalancer

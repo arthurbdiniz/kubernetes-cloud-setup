@@ -6,13 +6,13 @@ metadata:
     kubernetes.io/ingress.class: traefik
 spec:
   rules:
-  - host: echo1.example.com
+  - host: echo1.arthurbdiniz.com
     http:
       paths:
       - backend:
           serviceName: echo1
           servicePort: 80
-  - host: echo2.example.com
+  - host: echo2.arthurbdiniz.com
     http:
       paths:
       - backend:
