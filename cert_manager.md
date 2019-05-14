@@ -40,8 +40,7 @@ helm repo update
 helm install \
   --name cert-manager \
   --namespace cert-manager \
-  --version v0.7.1 \
-  jetstack/cert-manager
+  stable/cert-manager
 ```
 You should see the following output:
 ```bash
