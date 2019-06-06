@@ -19,7 +19,7 @@ Now access Dashboard at:
 
 Create the service account first using the following YAML file.
 ```bash
-kubectl create -f service-account.yaml
+kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/rbac/service_account.yaml
 
 # Output
 serviceaccount/admin-user created
@@ -27,7 +27,7 @@ serviceaccount/admin-user created
 
 The admin Role already exists in the cluster. We can use it for login. We just need to create only RoleBinding for the ServiceAccount we create above.
 ```bash
-kubectl create -f role-binding.yaml
+kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/rbac/role_binding.yaml
 
 # Output
 clusterrolebinding.rbac.authorization.k8s.io/admin-user created
