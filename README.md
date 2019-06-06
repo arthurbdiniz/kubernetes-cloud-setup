@@ -6,7 +6,7 @@
 ## Index
 
 1. [Client Tools](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-1--Client-Tools)
-2. [Tiller and Role-based Access Control](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-2--Tiller-and-Role-based-Access-Control)
+2. [Tiller and Role-based Access Control](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-2---Tiller-and-Role-based-Access-Control)
 3. [Setup Cloud Cluster](https://github.com/arthurbdiniz/k8s-digital-ocean/#Step-3--Setup-Cloud-Cluster)
 4. [Cluster Backend Setup](https://github.com/arthurbdiniz/kubernetes-cloud-setup#step-4--setting-up-dummy-backend-services)
 5. [Ingress Controller](https://github.com/arthurbdiniz/kubernetes-cloud-setup#step-5---ingress-controller)
