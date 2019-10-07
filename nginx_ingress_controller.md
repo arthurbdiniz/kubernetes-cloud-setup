@@ -1,5 +1,7 @@
 # Nginx Ingress Controller
 
+![header](images/nginx.png)
+
 ## Setting Up with Helm
 
 The Nginx Ingress Controller consists of a Pod that runs the Nginx web server and watches the Kubernetes Control Plane for new and updated Ingress Resource objects. An Ingress Resource is essentially a list of traffic routing rules for backend Services. For example, an Ingress rule can specify that HTTP traffic arriving at the path `/web1` should be directed towards the `web1` backend web server. Using Ingress Resources, you can also perform host-based routing: for example, routing requests that hit `web1.your_domain.com` to the backend Kubernetes Service web1.
@@ -8,7 +10,7 @@ Next, we'll create the Ingress Controller LoadBalancer Service, which will creat
 
 To create the LoadBalancer Service, run the helm installation of nginx template containing the Service definition:
 ```bash
-helm install --name nginx-ingress stable/nginx-ingress
+helm install --name nginx-ingress --namespace=ingress-nginx stable/nginx-ingress
 ```
 
 You should see the following output:
@@ -63,9 +65,11 @@ nginx-ingress  1s
 
 
 Now, confirm that the DigitalOcean Load Balancer was successfully created by fetching the Service details with kubectl:
+
 ```bash
 kubectl get svc --namespace=ingress-nginx
 ```
+
 You should see an external IP address, corresponding to the IP address of the DigitalOcean Load Balancer:
 ```bash
 # Output
@@ -118,7 +122,7 @@ ingress-nginx   LoadBalancer   10.245.247.67   203.0.113.0   80:32486/TCP,443:32
 ```
 
 # DNS Setup
-// TODO
+To make nginx translate a name to service on `k8s` is necessary to setup your DNS provider to point to the `External IP` generated on the last step.
 
 # Creating the Ingress Resource
 
@@ -128,9 +132,35 @@ We'll first create a simple rule to route traffic directed at echo1.example.com 
 
 Here, we've specified that we'd like to create an Ingress Resource called echo-ingress, and route traffic based on the Host header. An HTTP request Host header specifies the domain name of the target server. To learn more about Host request headers, consult the Mozilla Developer Network definition page. Requests with host echo1.example.com will be directed to the echo1 backend set up in Step 1, and requests with host echo2.example.com will be directed to the echo2 backend.
 
+#### echo_ingress.yaml
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: echo-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: echo1.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: echo1
+          servicePort: 80
+  - host: echo2.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: echo2
+          servicePort: 80
+```
+
 Create the Ingress using kubectl:
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/nginx_ingress_controller/echo_ingress.yaml
+kubectl apply -f echo_ingress.yaml
 ```
 You'll see the following output confirming the Ingress creation:
 ```
@@ -140,6 +170,12 @@ ingress.extensions/echo-ingress created
 
 To test the Ingress, navigate to your DNS management service and create A records for `echo1.example.com` and `echo2.example.com` pointing to the DigitalOcean Load Balancer's external IP. The Load Balancer's external IP is the external IP address for the ingress-nginx Service, which we fetched in the previous step. If you are using DigitalOcean to manage your domain's DNS records, consult How to Manage DNS Records to learn how to create A records.
 
+
+## Teardown the last ingress before continue to TLS Certificates
+Delete the Ingress using kubectl:
+```bash
+kubectl delete -f echo_ingress.yaml
+```
 
 ### [TLS Certificates - Installing and Configuring Cert-Manager](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/cert_manager.md)
 
