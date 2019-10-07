@@ -80,13 +80,14 @@ tiller-deploy-54fc6d9ccc-gp7sr                           1/1     Running   0    
 ### [Amazon Web Services (AWS)](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/Amazon_Web_Services/amazon-web-services.md)
 
 
-## Step 4 — Setting Up Dummy Backend Services
+## Step 4 — Setting Up and Testing Dummy Backend Services
 Before we deploy the Ingress Controller, we'll first create and roll out two dummy echo Services to which we'll route external traffic using the Ingress. The echo Services will run the hashicorp/http-echo web server container, which returns a page containing a text string passed in when the web server is launched. To learn more about http-echo, consult its GitHub Repo, and to learn more about Kubernetes Services, consult Services from the official Kubernetes docs.
 
 On your local machine, apply echo1.yaml using kubectl:
 ```bash
-$ kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo1.yaml
+kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo1.yaml
 ```
+
 ```bash
 # Output
 service/echo1 created
@@ -97,8 +98,9 @@ This indicates that the echo1 Service is now available internally at 10.245.222.
 
 Now that the echo1 Service is up and running, repeat this process for the echo2 Service.
 ```bash
-$ kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo2.yaml
+kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo2.yaml
 ```
+
 ```bash
 # Output
 service/echo2 created
@@ -118,6 +120,21 @@ echo2        ClusterIP   10.245.128.224   <none>        80/TCP    6m3s
 kubernetes   ClusterIP   10.245.0.1       <none>        443/TCP   4d21h
 ```
 
+Echo deployment with type `LoadBalancer`
+```bash
+kubectl create -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo.yaml
+```
+
+
+#### Rollback deploys
+```
+kubectl delete -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo.yaml
+kubectl delete -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo1.yaml
+kubectl delete -f https://raw.githubusercontent.com/arthurbdiniz/kubernetes-cloud-setup/master/deployments/echo2.yaml
+```
+
+
+
 ## Step 5 - Ingress Controller
 In this casa you can choose to use Nginx Ingress controller or Traefik Ingress Controller
 
@@ -125,9 +142,29 @@ In this casa you can choose to use Nginx Ingress controller or Traefik Ingress C
 
 ### [Setting Up the Traefik Ingress Controller](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/traefik.md)
 
----
 
-## Step 6 - Deploy the Dashboard UI
+## Step 6 - UI Management
+### Rancher 2
+
+#### Add the Helm Chart Repositorylink
+Use helm repo add command to add the Helm chart repository that contains charts to install Rancher. For more information about the repository choices and which is best for your use case, see [Choosing a Version of Rancher](https://rancher.com/docs/rancher/v2.x/en/installation/server-tags/#helm-chart-repositories).
+
+```bash
+helm repo add rancher-stable https://releases.rancher.com/server-charts/stable
+```
+
+Before install, make sure to have [cert-manager](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/cert_manager.md) already setup.
+
+```bash
+helm install rancher-stable/rancher \
+  --name rancher \
+  --namespace cattle-system \
+  --set hostname=rancher.arthurbdiniz.com \
+  --set ingress.tls.source=letsEncrypt \
+  --set letsEncrypt.email=example@email.com
+```
+
+### Deploy the Dashboard UI
 Kubernetes Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
 
 [Tutorial Link](https://github.com/arthurbdiniz/kubernetes-cloud-setup/blob/master/dashboard.md)
